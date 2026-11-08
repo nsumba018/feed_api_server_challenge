@@ -22,7 +22,7 @@ public class HealthController {
             return ResponseEntity.status(HttpStatus.OK)
                     .body(new HealthResponseDto("ok", "ok", healthService.getUptimeSeconds()));
         } catch (Exception e) {
-            // I return 503 when the database fails, as the spec asks
+            // 503 when the database fails
             return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
                     .body(new HealthErrorResponseDto("degraded", "unreachable", e.getMessage()));
         }

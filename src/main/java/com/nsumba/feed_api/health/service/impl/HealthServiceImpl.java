@@ -10,13 +10,12 @@ import org.springframework.stereotype.Service;
 public class HealthServiceImpl implements IHealthService {
 
     private final EntityManager entityManager;
-
-    // I save the time the service was created to calculate how long the app has been running
+    
     private final long startTimeMillis = System.currentTimeMillis();
 
     @Override
     public void checkDatabase() {
-        // I run SELECT 1 through JPA because the spec says health is ok only after this query succeeds
+        // SELECT 1 through JPA because the spec says health is ok only after this query succeeds
         entityManager.createNativeQuery("SELECT 1").getSingleResult();
     }
 
