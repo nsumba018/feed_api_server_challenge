@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Challenge repo (cloned locally for its tests, not our code) ###
+twelve-dollar-server-challenge-main/
