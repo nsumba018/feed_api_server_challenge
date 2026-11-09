@@ -28,6 +28,11 @@ public class GlobalExceptionHandler {
         return buildResponse(HttpStatus.NOT_FOUND, exception.getMessage());
     }
 
+    @ExceptionHandler(InvalidPostBodyException.class)
+    public ResponseEntity<ErrorResponseDto> handleInvalidPostBody(InvalidPostBodyException exception) {
+        return buildResponse(HttpStatus.BAD_REQUEST, exception.getMessage());
+    }
+
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<ErrorResponseDto> handleMalformedJson(HttpMessageNotReadableException exception) {
         return buildResponse(HttpStatus.BAD_REQUEST, "malformed JSON body");
