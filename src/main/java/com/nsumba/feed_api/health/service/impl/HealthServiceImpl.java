@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class HealthServiceImpl implements IHealthService {
 
     private final EntityManager entityManager;
-    
+
     private final long startTimeMillis = System.currentTimeMillis();
 
     @Override
